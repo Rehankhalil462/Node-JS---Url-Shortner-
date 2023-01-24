@@ -23,16 +23,14 @@ export const shortenURL = async (req, res) => {
               .exec()
               .then(async (data) => {
                 let url = new URLModal({
-                  short_url: `${process.env.BASE}/api/${data.length + 1}`,
+                  short_url: data.length + 1,
                   original_url,
                   urlId: data.length + 1,
                   date: new Date(),
                 });
                 await url.save().then(() => {
                   res.json({
-                    short_url: `${process.env.BASE}/api/${Number(
-                      data.length + 1
-                    )}`,
+                    short_url: data.length + 1,
                     original_url,
                   });
                 });
