@@ -1,0 +1,27 @@
+{
+  "name": "url-shortner",
+  "version": "1.0.0",
+  "description": "URl Shortner in Node,Express and MongoDB",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "url",
+    "URL-Shortner",
+    "url-shortner"
+  ],
+  "author": "Rehan Khalil",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
