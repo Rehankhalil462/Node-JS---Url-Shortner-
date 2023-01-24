@@ -20,7 +20,7 @@ app.get("/", function (req, res) {
   res.sendFile(process.cwd() + "/views/index.html");
 });
 app.post("/api/shorturl", shortenURL);
-app.get("/:id", getShortUrl);
+app.get("/api/:id", getShortUrl);
 
 app.listen(port, () => {
   console.info(`App is listening at PORT ${port}`);
