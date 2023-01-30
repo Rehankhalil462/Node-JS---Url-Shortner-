@@ -27,5 +27,5 @@ app.listen(port, () => {
 });
 
 app.get("/heartbeat", (req, res) => {
-  res.status(200).send("URL Shortner Microservice is working.");
+  res.status(200).send("URL Shortener Microservice is working.");
 });

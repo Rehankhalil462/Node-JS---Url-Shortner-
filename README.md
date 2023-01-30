@@ -1,6 +1,6 @@
-# URL Shortner
+# URL Shortener
 
-URL Shortner Microservice using Node JS, Express and MongoDB.
+URL Shortener Microservice using Node JS, Express and MongoDB.
 
 ## API Reference
 
@@ -10,7 +10,7 @@ URL Shortner Microservice using Node JS, Express and MongoDB.
   GET /heartbeat
 ```
 
-#### Response: "URL Shortner Microservice is working."
+#### Response: "URL Shortener Microservice is working."
 
 ---
 
