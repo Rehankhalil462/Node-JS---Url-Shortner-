@@ -9,12 +9,12 @@ export const shortenURL = async (req, res) => {
     if (modifiedURL) {
       dns.lookup(modifiedURL.hostname, async (err, address, family) => {
         if (err) {
-          res.json({ error: "invalid url" });
+          res.status(400).json({ error: "invalid url" });
           return;
         } else {
           const url = await URLModal.findOne({ original_url });
           if (url) {
-            res.json({
+            res.status(201).json({
               short_url: url.short_url,
               original_url: url.original_url,
             });
@@ -29,7 +29,7 @@ export const shortenURL = async (req, res) => {
                   date: new Date(),
                 });
                 await url.save().then(() => {
-                  res.json({
+                  res.status(201).json({
                     short_url: data.length + 1,
                     original_url,
                   });
@@ -43,7 +43,7 @@ export const shortenURL = async (req, res) => {
       return;
     }
   } catch (error) {
-    res.status(error.status || 500).json({
+    res.status(error.status || 400).json({
       error: {
         message: error.message,
       },
@@ -56,6 +56,6 @@ export const getShortUrl = async (req, res) => {
   if (url) {
     res.redirect(url.original_url);
   } else {
-    res.json({ error: "Wrong Format || Url not found" });
+    res.status(400).json({ error: "Wrong Format || Url not found" });
   }
 };
